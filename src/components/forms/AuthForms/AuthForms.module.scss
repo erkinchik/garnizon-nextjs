@@ -1,0 +1,58 @@
+.signUp,
+.login {
+  margin: auto;
+  padding: 20px;
+  width: 340px;
+  text-align: center;
+  .signUpHeader,
+  .loginHeader {
+    margin-bottom: 30px;
+    text-align: center;
+    a {
+      margin: 0 auto;
+    }
+  }
+}
+
+.loginForm,
+.signUpForm {
+  width: 100%;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: #00adee;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 20px 60px;
+  text-align: center;
+}
+.forgotPass,
+.createAccount {
+  text-decoration: underline;
+  color: #009fe3;
+
+  &:hover {
+    color: #2d2d2d;
+    text-decoration: underline;
+  }
+}
+
+.forgotPass {
+  //margin-left: 35px;
+  font-size: 0.9em;
+}
+
+.rememberPass {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  .remember {
+    margin: 0 !important;
+  }
+}

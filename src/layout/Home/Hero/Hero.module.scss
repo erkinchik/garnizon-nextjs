@@ -1,0 +1,1055 @@
+.hero {
+  background-color: #fff;
+  height: calc(100vh - 120px);
+  min-height: 650px;
+  overflow: hidden;
+  padding-bottom: 100px;
+  position: relative;
+  //top: -100px;
+  @media (max-width: 768px) {
+    & {
+      height: 100vh;
+      min-height: auto;
+      padding-bottom: 100px;
+      padding-top: 140px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+  }
+}
+
+.heroMobile {
+  position: absolute;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 124px);
+  background-color: #ffffff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  //margin-top: 124px;
+  display: none;
+
+  .heroMobileBlock {
+    border: none;
+    background-color: #fff;
+    border-radius: 27px;
+    width: 380px;
+    height: 230px;
+    margin-bottom: 40px;
+    position: relative;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-transition: 0.15s ease-in-out;
+    transition: 0.15s ease-in-out;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
+    &:last-child {
+      margin-bottom: 0;
+      .heroMobileTitle {
+        padding: 0 150px 0 0;
+        @media screen and (max-width: 480px) {
+          & {
+            padding: 0 90px 0 0;
+          }
+        }
+      }
+    }
+
+    .heroMobileTitle {
+      font-family: "GT Walsheim Pro";
+      font-size: 23px;
+      font-weight: bold;
+      color: #2d2d2d;
+      line-height: 1.2;
+      padding: 0 0 0 170px;
+      & span {
+        color: #005be3;
+      }
+      @media screen and (max-width: 480px) {
+        & {
+          font-size: 18px;
+          padding: 0 0 0 120px;
+        }
+      }
+    }
+
+    &:hover {
+      -webkit-filter: drop-shadow(0px 4px 12px rgba(67, 76, 93, 0.22));
+      filter: drop-shadow(0px 4px 12px rgba(67, 76, 93, 0.22));
+      -webkit-transition: 0.15s ease-in-out;
+      transition: 0.15s ease-in-out;
+    }
+    @media screen and (max-width: 480px) {
+      & {
+        width: 270px;
+        height: 170px;
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    & {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    & {
+      height: calc(100vh - 110px);
+      //margin-top: 110px;
+    }
+  }
+  .heroMobilePerson {
+    position: absolute;
+    bottom: 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .heroMobilePersonProducts {
+    bottom: -20px;
+    left: 22px;
+    width: 184px;
+    height: 296px;
+    background-image: url("../../../../assets/media/policeman.png");
+    @media screen and (max-width: 480px) {
+      & {
+        width: 127px;
+        height: 206px;
+      }
+    }
+  }
+  .heroMobilePersonSupport {
+    bottom: 20px;
+    right: 55px;
+    width: 83px;
+    height: 241px;
+    background-image: url("../../../../assets/media/secretary.png");
+    background-size: cover;
+    @media screen and (max-width: 480px) {
+      & {
+        right: 30px;
+        width: 67px;
+        height: 191px;
+      }
+    }
+  }
+}
+
+.heroArea {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: opacity 0.15s ease-in-out;
+  transition: opacity 0.15s ease-in-out;
+  width: 50%;
+
+  &::after {
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    pointer-events: none;
+
+    @media screen and (max-width: 1800px) {
+      & {
+        background-size: auto 95%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      & {
+        display: none;
+      }
+    }
+  }
+}
+
+.heroAreaProducts {
+  &::after {
+    background-image: url("../../../../assets/media/policeman.png");
+    //background-image: url("../../../images/pages/home/main-products.4400b23d82d4.png");
+    background-size: 420px;
+    background-position: bottom 140px left calc(50% - 70px);
+  }
+  @media (max-width: 768px) {
+    & {
+      z-index: 6;
+    }
+  }
+  @media screen and (max-height: 720px) {
+    &::after {
+      background-size: 420px;
+    }
+  }
+
+  @media screen and (max-height: 900px) {
+    &::after {
+      background-size: 330px;
+      background-position: bottom 60px left calc(50% - 70px);
+    }
+  }
+  @media screen and (max-width: 1800px) {
+    & {
+      background-size: auto 100%;
+    }
+  }
+  @media screen and (max-width: 992px) {
+    & {
+      background-size: 70%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & {
+      //display: none;
+    }
+  }
+}
+
+.heroLinkPreview {
+  bottom: 0;
+  left: 10px;
+  right: auto;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  pointer-events: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  max-width: 400px;
+  height: 100%;
+  @media (max-width: 768px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.heroAreaSupport {
+  left: 50%;
+
+  .heroLinkPreview {
+    left: auto;
+    right: 10px;
+  }
+
+  &::after {
+    background-image: url("../../../../assets/media/secretary.png");
+    background-size: 410px;
+    background-position: bottom 140px right calc(50% - 50px);
+  }
+  @media (max-width: 768px) {
+    .heroAreaSupport {
+      z-index: 6;
+    }
+  }
+  @media screen and (max-height: 900px) {
+    &::after {
+      background-size: 330px;
+      background-position: bottom 100px right calc(50% - 50px);
+    }
+  }
+
+  @media screen and (max-height: 720px) {
+    &::after {
+      background-size: 330px;
+    }
+  }
+}
+
+.heroAreaProducts .heroAreaTitle {
+  left: calc(50% - 220px);
+}
+
+.heroAreaSupport .heroAreaTitle {
+  right: calc(50% - 220px);
+}
+
+.heroAreaTitle {
+  cursor: pointer;
+  width: 330px;
+  font-family: "GT Eesti Pro Display", sans-serif;
+  font-size: 1.4em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1;
+  color: #ff224a;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 70px;
+  padding: 20px;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  background-color: #fff;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.34);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 7;
+
+  &:hover {
+    color: #fff;
+    background-color: #ff224a;
+  }
+  @media screen and (max-height: 900px) {
+    & {
+      bottom: 30px;
+    }
+  }
+  @media (max-width: 768px) {
+    & {
+      background-color: #009fe3;
+      border-radius: 24px;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-family: "Google Sans", Arial, sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.6;
+      margin: 40px 12px;
+      min-width: 284px;
+      padding: 0.7rem 0.75rem;
+      right: auto;
+      text-align: center;
+      vertical-align: top;
+      white-space: nowrap;
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .heroAreaTitle,
+  .heroAreaProducts .heroAreaTitle {
+    left: 0;
+    margin-left: 18px;
+    margin-right: 18px;
+    right: 0;
+    width: calc(100% - 36px);
+  }
+  .heroAreaProducts .heroAreaTitle {
+    bottom: 60px;
+  }
+}
+
+.heroAreaSupport .heroAreaTitle {
+  right: calc(50% - 220px);
+}
+.btn {
+  font-family: "GT Eesti Pro Display", sans-serif;
+  width: 100%;
+  height: 100%;
+  min-width: 160px;
+  padding: 15px 30px;
+  border-radius: 30px;
+  color: white;
+  margin-bottom: 8px;
+  outline: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  pointer-events: all;
+  cursor: pointer;
+  text-align: center !important;
+  border: none !important;
+}
+
+.addpulseBtn {
+  -webkit-animation: pulsebtn 2.5s infinite;
+  animation: pulsebtn 2.5s infinite;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: linear-gradient(-30deg, #ff1a0d 50%, #ff4136 50%);
+  box-shadow: 0 0 0 0 rgb(255 65 54 / 60%);
+}
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer !important;
+}
+
+@keyframes pulsebtn {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  25% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.12);
+  }
+  75% {
+    -webkit-transform: scale(0.98);
+    transform: scale(0.98);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+.heroSlidesWrap {
+  background-size: cover;
+  height: 100%;
+  left: 50%;
+  overflow: hidden;
+  padding-bottom: 100px;
+  padding-top: 100px;
+  position: absolute;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+  width: 50vw;
+  z-index: 5;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  @media (max-width: 768px) {
+    & {
+      //display: block;
+      display: none;
+    }
+  }
+}
+.banner {
+}
+
+.heroAreaText {
+  bottom: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.9375rem;
+  left: 50%;
+  margin-left: -170px;
+  max-width: 340px;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  min-height: 400px;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+  width: 100%;
+  z-index: -1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  &::before {
+    background-color: #fff;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 50%;
+    margin-left: -48px;
+    position: absolute;
+    width: 96px;
+  }
+  @media (max-width: 1100px) {
+    & {
+      max-width: 200px;
+      margin-left: -100px;
+      font-size: 0.8rem;
+    }
+  }
+  @media (max-width: 768px) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.heroSlidesOverlay,
+.heroOverlay {
+  background-color: #009fe3;
+  box-shadow: 0 0 2px 2px #009fe3;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: opacity 0.1s ease-in-out,
+    -webkit-transform 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
+    -webkit-transform 0.1s ease-in-out;
+  z-index: 3;
+  pointer-events: none;
+}
+.heroOverlay {
+  opacity: 0;
+  -webkit-transform: translateY(10%);
+  transform: translateY(10%);
+  width: 50%;
+  -webkit-clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 65% 0, 100% 100%, 0 100%);
+  pointer-events: none;
+}
+.heroSlidesOverlay {
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  -webkit-clip-path: polygon(0 0, 100% 0, 65% 100%, 35% 100%);
+  clip-path: polygon(0 0, 100% 0, 65% 100%, 35% 100%);
+}
+.heroSlidesOverlay,
+.heroOverlay {
+  background-color: #009fe3;
+  box-shadow: 0 0 2px 2px #009fe3;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: opacity 0.1s ease-in-out,
+    -webkit-transform 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out,
+    -webkit-transform 0.1s ease-in-out;
+  z-index: 3;
+  pointer-events: none;
+}
+.heroSlidesOverlayVisible {
+  opacity: 2;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: opacity 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
+}
+
+.heroOverlayVisibleProds {
+  left: 50%;
+  right: auto;
+  -webkit-clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
+  clip-path: polygon(35% 0, 100% 0, 100% 100%, 0 100%);
+}
+.heroOverlayVisible {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: opacity 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+    -webkit-transform 0.3s ease-in-out;
+}
+
+@media (max-width: 768px) {
+  .heroSlidesOverlay,
+  .heroOverlay {
+    display: none;
+  }
+}
+
+.heroSlideEvent {
+  margin: 0 auto;
+  position: relative;
+  text-transform: uppercase;
+  width: 450px;
+  height: 380px;
+  padding: 60px;
+  border-radius: 27px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-image: url("../../../../assets/media/sosBanner.png");
+  @media (max-width: 768px) {
+    & {
+      height: 150px !important;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.heroSlideEventHidden {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .heroSlideEvent {
+    width: 290px;
+    height: 240px;
+  }
+}
+
+.heroAreaContentVisible {
+  z-index: 4 !important;
+  opacity: 1 !important;
+  @media (max-width: 768px) {
+    & {
+      z-index: 6 !important;
+    }
+  }
+}
+
+.heroAreaContent {
+  background-color: rgba(34, 38, 45, 0.85);
+  opacity: 0;
+  z-index: -1;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .heroAreaOpened .heroAreaContent {
+    padding-bottom: 35px;
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroAreaContent {
+    position: relative;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    pointer-events: all;
+    height: 100vh;
+  }
+  .heroOpenedProductsArea .heroAreaProducts .heroAreaContent,
+  .heroOpenedSupportArea .heroAreaSupport .heroAreaContent {
+    visibility: visible;
+  }
+  .heroAreaProducts .heroAreaContent,
+  .heroAreaSupport .heroAreaContent {
+    left: auto;
+    right: 0;
+    text-align: right;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroAreaOpened .heroAreaContent {
+    padding-top: 70px;
+  }
+}
+
+.heroAreaContentInner {
+  left: 30%;
+  position: absolute;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+.heroAreaSupport .heroAreaContentInner {
+  left: auto;
+  right: 30%;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+}
+
+@media (max-width: 768px) {
+  .heroAreaSupport .heroAreaContentInner {
+    right: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroAreaContentInner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    left: 0;
+    height: auto;
+    width: auto;
+    padding: 0 20px;
+    margin: 0 auto;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+.heroAreaNav {
+  text-align: left;
+  @media (max-width: 768px) and (min-width: 576px) {
+    & {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+  }
+}
+
+.heroAreaIcon {
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 36px;
+  left: 18px;
+  margin-top: -18px;
+  position: absolute;
+  top: 50%;
+  width: 39px;
+  @media (max-width: 1199.98px) {
+    & {
+      left: 12px;
+    }
+  }
+}
+
+button.heroAreaLink {
+  cursor: pointer;
+  width: 100%;
+  text-align: start;
+}
+
+.heroAreaLink {
+  border: 1px solid #979797;
+  border-radius: 28px;
+  color: #fff;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 36px;
+  text-align: start;
+  opacity: 0;
+  padding: 8px 40px;
+  position: relative;
+  -webkit-transform: translateX(10px);
+  transform: translateX(10px);
+  -webkit-transition: none;
+  transition: none;
+  visibility: hidden;
+  white-space: nowrap;
+  pointer-events: all;
+  background-color: transparent;
+
+  @media (max-width: 1199.98px) {
+    & {
+      font-size: 0.9rem;
+      padding: 5px 20px;
+    }
+  }
+
+  @media (max-width: 768px) and (min-width: 576px) {
+    & {
+      margin-bottom: 15px;
+      width: 48%;
+    }
+    &:nth-child(odd) {
+      margin-right: 4%;
+    }
+  }
+
+  @media (max-width: 320px) {
+    & {
+      padding: 3px 25px 3px 60px;
+    }
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  @media (max-width: 768px) {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  @media (max-width: 320px) {
+    &:not(:last-child) {
+      margin-bottom: 3px;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #009fe3;
+    border-color: #009fe3;
+    color: #fff;
+  }
+}
+
+.heroAreaLinkVisible {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: opacity 0.25s ease-in-out,
+    -webkit-transform 0.25s ease-in-out;
+  transition: opacity 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out,
+    -webkit-transform 0.25s ease-in-out;
+  visibility: visible;
+  &:nth-child(1) {
+    -webkit-transition-delay: 0.1s;
+    transition-delay: 0.1s;
+  }
+
+  &:nth-child(2) {
+    -webkit-transition-delay: 0.15s;
+    transition-delay: 0.15s;
+  }
+
+  &:nth-child(3) {
+    -webkit-transition-delay: 0.25s;
+    transition-delay: 0.25s;
+  }
+
+  &:nth-child(4) {
+    -webkit-transition: opacity 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out,
+      -webkit-transform 0.3s ease-in-out;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+  }
+
+  &:nth-child(5) {
+    -webkit-transition: opacity 0.35s ease-in-out,
+      -webkit-transform 0.35s ease-in-out;
+    transition: opacity 0.35s ease-in-out, -webkit-transform 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out;
+    transition: transform 0.35s ease-in-out, opacity 0.35s ease-in-out,
+      -webkit-transform 0.35s ease-in-out;
+    -webkit-transition-delay: 0.35s;
+    transition-delay: 0.35s;
+  }
+
+  &:nth-child(6) {
+    -webkit-transition: opacity 0.4s ease-in-out,
+      -webkit-transform 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out,
+      -webkit-transform 0.4s ease-in-out;
+    -webkit-transition-delay: 0.4s;
+    transition-delay: 0.4s;
+  }
+
+  &:nth-child(7) {
+    -webkit-transition: opacity 0.45s ease-in-out,
+      -webkit-transform 0.45s ease-in-out;
+    transition: opacity 0.45s ease-in-out, -webkit-transform 0.45s ease-in-out;
+    transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out;
+    transition: transform 0.45s ease-in-out, opacity 0.45s ease-in-out,
+      -webkit-transform 0.45s ease-in-out;
+    -webkit-transition-delay: 0.45s;
+    transition-delay: 0.45s;
+  }
+
+  &:nth-child(8) {
+    -webkit-transition: opacity 0.5s ease-in-out,
+      -webkit-transform 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out,
+      -webkit-transform 0.5s ease-in-out;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroOpenedProductsArea .hero-area.heroAreaProducts,
+  .heroOpenedSupportArea .hero-area.heroAreaSupport {
+    background: #000
+      url("../../../../assets/images/pages/home/hero_blured.cb5e47968f58.png")
+      center 0 no-repeat;
+    background-size: cover;
+    bottom: auto;
+    left: auto;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+}
+.heroOpenedProductsArea .heroAreaProducts .heroAreaContent,
+.heroOpenedSupportArea .heroAreaSupport .heroAreaContent {
+  visibility: visible;
+}
+
+@media (max-width: 768px) {
+  .heroAreaContent {
+    position: relative;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    pointer-events: all;
+    height: 100vh;
+  }
+}
+@media (max-width: 768px) {
+  .heroAreaSupport .heroAreaContentInner {
+    right: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroOpenedSupportArea .heroAreaSupport .heroAreaLink,
+  .heroOpenedProductsArea .heroAreaProducts .heroAreaLink {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: opacity 0.25s ease-in-out,
+      -webkit-transform 0.25s ease-in-out;
+    transition: opacity 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out,
+      -webkit-transform 0.25s ease-in-out;
+    visibility: visible;
+  }
+}
+@media (max-width: 768px) {
+  .heroBack {
+    margin-top: 0;
+  }
+  .heroOpenedProductsArea .heroAreaProducts .heroBack,
+  .heroOpenedSupportArea .heroAreaSupport .heroBack {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroOpenedProductsArea .heroAreaProducts .heroAreaContent,
+  .heroOpenedSupportArea .heroAreaSupport .heroAreaContent {
+    visibility: visible;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroAreaOpened .heroAreaContent {
+    padding-top: 70px;
+  }
+}
+@media (min-width: 768px) {
+  .heroAreaOpened .heroAreaContent {
+    padding-bottom: 35px;
+    padding-top: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .heroOpenedProductsArea .heroArea.heroAreaProducts,
+  .heroOpenedSupportArea .heroArea.heroAreaSupport {
+    z-index: -1;
+    background: #000
+      url(../../../../assets/images/pages/home/hero_blured.cb5e47968f58.png)
+      center 0 no-repeat;
+    background-size: cover;
+    bottom: auto;
+    left: auto;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+  }
+  .heroArea.heroAreaSupport.heroAreaSupportVisible,
+  .heroArea.heroAreaProducts.heroAreaProductsVisible {
+    z-index: 8;
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .heroAreaProducts .heroAreaContent {
+    left: auto;
+    right: 0;
+    text-align: right;
+  }
+}

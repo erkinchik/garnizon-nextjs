@@ -1,0 +1,27 @@
+<svg width="26" height="29" viewBox="0 0 26 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="path-1-inside-1" fill="white">
+<path d="M0 1.59999C0 1.15816 0.358172 0.799988 0.8 0.799988H15.2C15.6418 0.799988 16 1.15816 16 1.59999V28H0V1.59999Z"/>
+</mask>
+<path d="M0 1.59999C0 1.15816 0.358172 0.799988 0.8 0.799988H15.2C15.6418 0.799988 16 1.15816 16 1.59999V28H0V1.59999Z" stroke="white" stroke-width="2" mask="url(#path-1-inside-1)"/>
+<rect x="3.7002" y="4.5" width="3" height="3" stroke="white"/>
+<rect x="9.2998" y="4.5" width="3" height="3" stroke="white"/>
+<rect x="18.9004" y="8.5" width="3" height="3" stroke="white"/>
+<rect x="18.9004" y="13.3" width="3" height="3" stroke="white"/>
+<rect x="18.9004" y="18.1" width="3" height="3" stroke="white"/>
+<rect x="3.7002" y="10.1" width="3" height="3" stroke="white"/>
+<rect x="9.2998" y="10.1" width="3" height="3" stroke="white"/>
+<rect x="3.7002" y="15.7" width="3" height="3" stroke="white"/>
+<mask id="path-10-inside-2" fill="white">
+<path d="M4 23.2C4 22.7582 4.35817 22.4 4.8 22.4H11.2C11.6418 22.4 12 22.7582 12 23.2V28H4V23.2Z"/>
+</mask>
+<path d="M4 23.2C4 22.7582 4.35817 22.4 4.8 22.4H11.2C11.6418 22.4 12 22.7582 12 23.2V28H4V23.2Z" stroke="white" stroke-width="2" mask="url(#path-10-inside-2)"/>
+<rect x="9.2998" y="15.7" width="3" height="3" stroke="white"/>
+<path d="M7.99961 23.2V27.2" stroke="white"/>
+<path d="M16 5.59998H24C24.4418 5.59998 24.8 5.95815 24.8 6.39998V27.6H16" stroke="white"/>
+<path d="M16 24.8H24.8" stroke="white"/>
+<path d="M7.99961 23.2V27.2" stroke="white"/>
+<path d="M5.6002 0.8V0" stroke="white"/>
+<path d="M10.4 0.8V0" stroke="white"/>
+<path d="M19.1998 5.6V4" stroke="white"/>
+<path d="M21.6002 5.6V4" stroke="white"/>
+</svg>

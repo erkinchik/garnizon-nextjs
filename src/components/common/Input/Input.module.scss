@@ -1,0 +1,18 @@
+.formControlInput {
+  display: block;
+  outline: none;
+  width: 100%;
+  height: calc(1.6em + 1.4rem + 2px);
+  padding: 0.7rem 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  -webkit-transition: border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
