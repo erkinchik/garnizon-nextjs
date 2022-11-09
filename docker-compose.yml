@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  garnizon_frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/garnizon_nextjs
