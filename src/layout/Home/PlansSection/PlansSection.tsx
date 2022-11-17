@@ -7,7 +7,7 @@ import type { NotificationPlacement } from "antd/es/notification";
 import { getNoun } from "../../../../utils/getNoun";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import { token } from "../../../../utils";
-import { IPlansFields } from "../../../types/contentful";
+import { IPlans, IPlansFields } from "../../../types/contentful";
 
 const plans = [
   { title: "Стандартный", price: 500, callsQuantity: 1 },
@@ -25,7 +25,12 @@ const plans = [
   },
 ];
 
-const PlansSection = ({ plans }: any) => {
+const PlansSection = ({ plans }: { plans: IPlans[] }) => {
+  const sortedPlans = plans?.sort(
+    (a, b) =>
+      Number(new Date(a.sys.createdAt)) - Number(new Date(b.sys.createdAt))
+  );
+
   const { isAuth } = useAppSelector((s: any) => s.auth);
   const openNotification = () => {
     notification.error({
@@ -45,7 +50,7 @@ const PlansSection = ({ plans }: any) => {
   return (
     <section className={classes.section}>
       <div className={classes.container}>
-        {plans?.map(({ fields }: { fields: IPlansFields }) => {
+        {sortedPlans?.map(({ fields }: { fields: IPlansFields }) => {
           return (
             <div className={classes.column} key={fields.price}>
               <div className={`${classes.pricingCard} ${classes.basic}`}>
