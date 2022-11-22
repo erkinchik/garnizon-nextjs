@@ -1,0 +1,48 @@
+@import "styles/vars";
+
+.card {
+  transition: all 0.3s linear;
+  max-width: 500px;
+  padding: 10px;
+  border-radius: 10px;
+  .header {
+    font-size: 1.8em;
+    text-align: center;
+    font-weight: normal;
+    transition: all 0.3s linear;
+  }
+  .body {
+    display: flex;
+    align-items: center;
+    //align-items: flex-start;
+    gap: 10px;
+    .image {
+      max-width: 400px;
+      max-height: 400px;
+      flex: 2;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    .theses {
+      //margin-top: 30px;
+      flex: 2;
+
+      .thesesList {
+        li {
+          word-break: break-word;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+.cardActive {
+  background-color: $primary-color;
+  color: white;
+  .header {
+    color: white;
+  }
+}

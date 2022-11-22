@@ -1,3 +1,5 @@
+@import "styles/vars";
+
 .hero {
   background-color: #fff;
   height: calc(100vh - 120px);
@@ -85,7 +87,6 @@
     }
 
     .heroMobileTitle {
-      font-family: "GT Walsheim Pro";
       font-size: 23px;
       font-weight: bold;
       color: #2d2d2d;
@@ -203,13 +204,13 @@
 .heroAreaProducts {
   &::after {
     background-image: url("../../../../assets/media/policeman.png");
-    //background-image: url("../../../images/pages/home/main-products.4400b23d82d4.png");
+    //background-image: url("../../../icons/pages/home/main-products.4400b23d82d4.png");
     background-size: 420px;
     background-position: bottom 140px left calc(50% - 70px);
   }
   @media (max-width: 768px) {
     & {
-      z-index: 6;
+      z-index: -1;
     }
   }
   @media screen and (max-height: 720px) {
@@ -243,6 +244,7 @@
 }
 
 .heroLinkPreview {
+  opacity: 0;
   bottom: 0;
   left: 10px;
   right: auto;
@@ -250,15 +252,16 @@
   top: 0;
   z-index: -1;
   pointer-events: none;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+
+  .info {
+    position: absolute;
+    max-width: 80%;
+    bottom: 100px;
+    left: -20%;
+    z-index: 10;
+    color: white;
+  }
+
   max-width: 400px;
   height: 100%;
   @media (max-width: 768px) {
@@ -272,6 +275,11 @@
   left: 50%;
 
   .heroLinkPreview {
+    left: auto;
+    right: 10px;
+  }
+
+  .heroAreaSupport .heroLinkPreview {
     left: auto;
     right: 10px;
   }
@@ -311,12 +319,12 @@
 .heroAreaTitle {
   cursor: pointer;
   width: 330px;
-  font-family: "GT Eesti Pro Display", sans-serif;
+  //font-family: "GT Eesti Pro Display", sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   text-align: center;
   line-height: 1;
-  color: #ff224a;
+  color: $primary-color;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -336,7 +344,7 @@
 
   &:hover {
     color: #fff;
-    background-color: #ff224a;
+    background-color: $primary-color;
   }
   @media screen and (max-height: 900px) {
     & {
@@ -350,7 +358,7 @@
       color: #fff;
       cursor: pointer;
       display: inline-block;
-      font-family: "Google Sans", Arial, sans-serif;
+      //font-family: "Google Sans", Arial, sans-serif;
       font-size: 1rem;
       font-weight: normal;
       line-height: 1.6;
@@ -384,7 +392,7 @@
   right: calc(50% - 220px);
 }
 .btn {
-  font-family: "GT Eesti Pro Display", sans-serif;
+  //font-family: "GT Eesti Pro Display", sans-serif;
   width: 100%;
   height: 100%;
   min-width: 160px;
@@ -472,17 +480,17 @@
 }
 
 .heroAreaText {
-  bottom: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  bottom: 0;
+  opacity: 0;
   color: #fff;
   font-size: 0.9375rem;
   left: 50%;
@@ -491,16 +499,14 @@
   margin-top: 10vw;
   margin-bottom: 10vw;
   min-height: 400px;
-  opacity: 0;
   position: absolute;
-  -webkit-transition: 0.15s ease-in-out;
-  transition: 0.15s ease-in-out;
   width: 100%;
   z-index: -1;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  animation: textAnimation 0.5s;
 
   &::before {
     background-color: #fff;
@@ -524,6 +530,22 @@
       display: none;
     }
   }
+}
+
+@keyframes textAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.heroAreaTextVisible {
+  z-index: 10;
+  opacity: 1;
+
+  transition: opacity 2s;
 }
 
 .heroSlidesOverlay,
@@ -857,6 +879,23 @@ button.heroAreaLink {
     color: #fff;
   }
 }
+.heroLinkPreviewVisible {
+  z-index: 10;
+  opacity: 1;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  transition: all 0.5s linear;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
 
 .heroAreaLinkVisible {
   opacity: 1;
@@ -944,7 +983,7 @@ button.heroAreaLink {
   .heroOpenedProductsArea .hero-area.heroAreaProducts,
   .heroOpenedSupportArea .hero-area.heroAreaSupport {
     background: #000
-      url("../../../../assets/images/pages/home/hero_blured.cb5e47968f58.png")
+      url("../../../../assets/icons/pages/home/hero_blured.cb5e47968f58.png")
       center 0 no-repeat;
     background-size: cover;
     bottom: auto;
@@ -1029,7 +1068,7 @@ button.heroAreaLink {
   .heroOpenedSupportArea .heroArea.heroAreaSupport {
     z-index: -1;
     background: #000
-      url(../../../../assets/images/pages/home/hero_blured.cb5e47968f58.png)
+      url(../../../../assets/icons/pages/home/hero_blured.cb5e47968f58.png)
       center 0 no-repeat;
     background-size: cover;
     bottom: auto;

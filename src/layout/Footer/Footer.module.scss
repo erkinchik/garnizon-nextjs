@@ -39,13 +39,13 @@
           width: 36px;
         }
         .whatsApp {
-          background-image: url(../../../assets/images/redesign/social/whatsapp.8a549938e510.svg);
+          background-image: url(../../../assets/icons/social/whatsapp.8a549938e510.svg);
         }
         .telegram {
-          background-image: url(../../../assets/images/redesign/social/telegram.ad6bc4b095e2.svg);
+          background-image: url(../../../assets/icons/social/telegram.ad6bc4b095e2.svg);
         }
         .instagram {
-          background-image: url(../../../assets/images/redesign/social/instagram.08c3585e3d7d.svg);
+          background-image: url(../../../assets/icons/social/instagram.08c3585e3d7d.svg);
         }
         @media screen and (max-width: 1200px) {
           .socialLinks {
@@ -82,7 +82,7 @@
             -webkit-flex-wrap: wrap;
             flex-wrap: wrap;
             .apple {
-              background-image: url(../../../assets/images/redesign/appstore_badge.faa02cbbf6ac.png);
+              background-image: url(../../../assets/icons/redesign/appstore_badge.faa02cbbf6ac.png);
               background-repeat: no-repeat;
               background-size: contain;
               border-radius: 5.625px;
@@ -92,7 +92,7 @@
               margin: 0 8px 0 0;
             }
             .google {
-              background-image: url(../../../assets/images/redesign/googleplay_badge.1d7d95af5395.png);
+              background-image: url(../../../assets/icons/redesign/googleplay_badge.1d7d95af5395.png);
               background-repeat: no-repeat;
               background-size: contain;
               border-radius: 5.625px;

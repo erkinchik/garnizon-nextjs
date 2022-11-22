@@ -2,9 +2,9 @@ import React from "react";
 
 import classes from "./Footer.module.scss";
 
-import TelegramIcon from "../../../assets/images/redesign/social/telegram.ad6bc4b095e2.svg";
-import WhatsAppIcon from "../../../assets/images/redesign/social/whatsapp.8a549938e510.svg";
-import InstagramIcon from "../../../assets/images/redesign/social/instagram.08c3585e3d7d.svg";
+import TelegramIcon from "../../../assets/icons/social/telegram.ad6bc4b095e2.svg";
+import WhatsAppIcon from "../../../assets/icons/social/whatsapp.8a549938e510.svg";
+import InstagramIcon from "../../../assets/icons/social/instagram.08c3585e3d7d.svg";
 import { url } from "inspector";
 import { useAppSelector } from "../../hooks/useAppSelector";
 

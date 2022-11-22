@@ -9,7 +9,12 @@ import WhatsAppIcon from "../../../assets/icons/whatsappIcon.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
 import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
-import { HOME_PAGE, LOGIN_PAGE, PROFILE_PAGE } from "../../routes/path";
+import {
+  HOME_PAGE,
+  LOGIN_PAGE,
+  PROFILE_PAGE,
+  REGISTRATION_PAGE,
+} from "../../routes/path";
 import { useRouter } from "next/router";
 
 import { logout } from "../../store/slices/authSlice";
@@ -31,6 +36,7 @@ const linksStructure = [
     path: "",
   },
 ];
+const profilePage = [REGISTRATION_PAGE, LOGIN_PAGE];
 
 const Header: FC = () => {
   const { token } = useAppSelector((s) => s.auth);
@@ -92,7 +98,7 @@ const Header: FC = () => {
               <WhatsAppIcon />
             </a>
           </li>
-          {router.pathname !== LOGIN_PAGE && (
+          {!profilePage.includes(router.pathname) && (
             <li
               className={`${classes.linkItem} ${classes.icon} ${classes.profile} `}
               data-tooltip={"Личный Кабинет"}

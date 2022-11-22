@@ -19,10 +19,12 @@ import {
   InfoSection,
   MainWorkSection,
   PlansSection,
+  AboutService,
   ServicesSection,
 } from "../layout";
 import { useDispatch } from "react-redux";
 import { setLinks } from "../store/slices/linksSlice";
+import { useRouter } from "next/router";
 
 interface HomeProps {
   home: IHome[];
@@ -44,9 +46,10 @@ const Home: NextPage<HomeProps> = ({ home, services, plans, links }) => {
 
       <main className={classes.home}>
         <Hero banner={heroSection.fields.banner?.fields.file.url} />
-        <InfoSection text={heroSection.fields.infoText || ""} />
-        <ServicesSection services={services} />
+        {/*<InfoSection text={heroSection.fields.infoText || ""} />*/}
+        {/*<ServicesSection services={services} />*/}
         <PlansSection plans={plans} />
+        <AboutService />
         <MainWorkSection
           text={mainWorkSection.fields.infoText!}
           banner={mainWorkSection.fields.banner?.fields.file.url!}

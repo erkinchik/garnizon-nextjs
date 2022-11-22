@@ -1,11 +1,32 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import Image, { StaticImageData } from "next/image";
+import guard from "../../../../assets/media/guard.jpg";
+import gBanner from "../../../../assets/media/gZoneBanner.png";
+// import Link from 'next/Link';
+import { guardButtons, supportButtons } from "../../../../utils/heroNavMenu";
+import cn from "classnames";
 
-import classes from "./Hero.module.scss";
+import styles from "./Hero.module.scss";
+import Link from "next/link";
+import { useRouter } from "next/router";
+
 
 const Hero = ({ banner }: any) => {
+  const router = useRouter();
   const [isMouseOver, setIsMouseOver] = useState(false);
   const [isVisibleGuard, setIsVisibleGuard] = useState(false);
   const [isVisibleSupport, setIsVisibleSupport] = useState(false);
+  const [enterLink, setEnterLink] = useState({
+    isMouseEnter: false,
+    image: guard,
+    text: "",
+  });
+  useEffect(() => {
+
+    setIsVisibleGuard(false);
+    setIsVisibleSupport(false);
+  }, [router.asPath, router]);
+
 
   const openSupportBlock = () => setIsVisibleSupport(true);
   const closeSupportBlock = () => setIsVisibleSupport(false);
@@ -13,118 +34,134 @@ const Hero = ({ banner }: any) => {
   const openGuardBlock = () => setIsVisibleGuard(true);
   const closeGuardBlock = () => setIsVisibleGuard(false);
 
+  const handleEnterLink = ({
+    value,
+    image,
+    text = "",
+  }: {
+    value: boolean;
+    image: StaticImageData;
+    text?: string;
+  }) => setEnterLink({ isMouseEnter: value, image, text });
+
   return (
     <div
-      className={`${classes.hero} ${
-        isVisibleSupport && classes.heroOpenedSupportArea
-      } ${isVisibleGuard && classes.heroOpenedProductsArea}`}
+      className={cn(styles.hero, {
+        [styles.heroOpenedProductsArea]: isVisibleGuard,
+        [styles.heroOpenedSupportArea]: isVisibleSupport,
+      })}
     >
-      <div className={classes.heroMobile} style={{ zIndex: 6 }}>
-        <div className={`${classes.heroMobileBlock}`} onClick={openGuardBlock}>
+      <div className={styles.heroMobile} style={{ zIndex: 6 }}>
+        <div className={styles.heroMobileBlock} onClick={openGuardBlock}>
           <div
-            className={`${classes.heroMobilePerson} ${classes.heroMobilePersonProducts}`}
+            className={cn(
+              styles.heroMobilePerson,
+              styles.heroMobilePersonProducts
+            )}
           />
-          <div className={classes.heroMobileTitle}>
+          <div className={styles.heroMobileTitle}>
             ПОЛУЧИТЬ <br />
             <span>ЗАЩИТУ</span>
           </div>
         </div>
         <div
           style={{ backgroundImage: `url("http:${banner}")` }}
-          className={`${classes.heroSlideEvent} ${
-            isVisibleGuard || isVisibleSupport
-              ? classes.heroSlideEventHidden
-              : ""
-          }`}
+          className={cn(styles.heroSlideEvent, {
+            [styles.heroSlideEventHidden]: isVisibleGuard || isVisibleSupport,
+          })}
         />
-        <div
-          className={`${classes.heroMobileBlock}`}
-          onClick={openSupportBlock}
-        >
+        <div className={styles.heroMobileBlock} onClick={openSupportBlock}>
           <div
-            className={`${classes.heroMobilePerson} ${classes.heroMobilePersonSupport}`}
+            className={cn(
+              styles.heroMobilePerson,
+              styles.heroMobilePersonSupport
+            )}
           />
-          <div className={classes.heroMobileTitle}>
+          <div className={styles.heroMobileTitle}>
             <span>ПОДДЕРЖКА</span> <br />
             КЛИЕНТОВ
           </div>
         </div>
       </div>
       <div
-        className={` ${classes.heroArea} ${classes.heroAreaProducts} ${
-          isVisibleGuard && classes.heroAreaProductsVisible
-        }`}
+        className={cn(styles.heroArea, styles.heroAreaProducts, {
+          [styles.heroAreaProductsVisible]: isVisibleGuard,
+        })}
       >
-        {isVisibleGuard || isVisibleSupport ? null : (
-          <div className={classes.heroAreaTitle} onClick={openGuardBlock}>
-            ПОЛУЧИТЬ ЗАЩИТУ
+        <>
+          <div
+            className={cn(styles.heroLinkPreview, {
+              [styles.heroLinkPreviewVisible]:
+                isVisibleSupport && enterLink.isMouseEnter,
+            })}
+          >
+            <Image src={enterLink.image} />
           </div>
-        )}
+          {isVisibleGuard || isVisibleSupport ? null : (
+            <div className={styles.heroAreaTitle} onClick={openGuardBlock}>
+              ПОЛУЧИТЬ ЗАЩИТУ
+            </div>
+          )}
+        </>
         <div
-          className={`${classes.heroAreaContent} ${
-            isVisibleGuard && classes.heroAreaContentVisible
-          }`}
+          className={cn(styles.heroAreaContent, {
+            [styles.heroAreaContentVisible]: isVisibleGuard,
+          })}
         >
-          <div className={classes.heroAreaContentInner}>
+          <div className={styles.heroAreaContentInner}>
             <a
               href="tel:+996 (703) 701000"
-              className={`${classes.btn} ${classes.heroAreaLink}  ${classes.heroAreaLinkVisible} ${classes.addpulseBtn}`}
+              className={cn(
+                styles.btn,
+                styles.heroAreaLink,
+                styles.heroAreaLinkVisible,
+                styles.addpulseBtn
+              )}
             >
               Заказать звонок
             </a>
-            <div className={classes.heroAreaNav}>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleGuard && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Физическая охрана
-              </a>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleGuard && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Пультовая охрана
-              </a>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleGuard && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Личная охрана
-              </a>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleGuard && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Охрана и сопровождение грузов
-              </a>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleGuard && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Инкасация
-              </a>
+            <div className={styles.heroAreaNav}>
+              {guardButtons.map(
+                (b: {
+                  title: string;
+                  href: string;
+                  image: StaticImageData;
+                  text: string;
+                }): JSX.Element => {
+                  return (
+                    <Link key={b.title} href={`#${b.href}`} scroll={false} passHref>
+                      <a
+                        className={cn(styles.heroAreaLink, {
+                          [styles.heroAreaLinkVisible]: isVisibleGuard,
+                        })}
+                        onMouseEnter={() =>
+                          handleEnterLink({
+                            value: true,
+                            image: b.image,
+                            text: b.text,
+                          })
+                        }
+                        onMouseLeave={() =>
+                          handleEnterLink({
+                            value: false,
+                            image: b.image,
+                          })
+                        }
+                      >
+                        <div className={styles.heroAreaIcon} />
+                        {b.title}
+                      </a>
+                    </Link>
+                  );
+                }
+              )}
               <button
-                className={`${classes.heroAreaLink} ${
-                  isVisibleGuard && classes.heroAreaLinkVisible
+                className={`${styles.heroAreaLink} ${
+                  isVisibleGuard && styles.heroAreaLinkVisible
                 }`}
                 onClick={closeGuardBlock}
               >
-                <div className={classes.heroAreaIcon} />
+                <div className={styles.heroAreaIcon} />
                 Назад
               </button>
             </div>
@@ -132,112 +169,114 @@ const Hero = ({ banner }: any) => {
         </div>
       </div>
       <div
-        className={`${classes.heroArea} ${classes.heroAreaSupport} ${
-          isVisibleSupport && classes.heroAreaSupportVisible
-        }`}
+        className={cn(styles.heroArea, styles.heroAreaSupport, {
+          [styles.heroAreaSupportVisible]: isVisibleSupport,
+        })}
       >
-        {isVisibleSupport || isVisibleGuard ? null : (
+        <>
           <div
-            onClick={openSupportBlock}
-            className={`${classes.heroAreaTitle} ${
-              isMouseOver ? classes.addpulse : ""
-            }`}
+            className={cn(styles.heroLinkPreview, {
+              [styles.heroLinkPreviewVisible]:
+                isVisibleGuard && enterLink.isMouseEnter,
+            })}
           >
-            ПОДДЕРЖКА КЛИЕНТОВ
+            <Image src={enterLink.image} />
           </div>
-        )}
+          {isVisibleSupport || isVisibleGuard ? null : (
+            <div
+              onClick={openSupportBlock}
+              className={cn(styles.heroAreaTitle, {
+                [styles.addpulseBtn]: isMouseOver,
+              })}
+            >
+              ПОДДЕРЖКА КЛИЕНТОВ
+            </div>
+          )}
+        </>
         <div
-          className={`${classes.heroAreaContent} ${
-            isVisibleSupport && classes.heroAreaContentVisible
-          }`}
+          className={cn(styles.heroAreaContent, {
+            [styles.heroAreaContentVisible]: isVisibleSupport,
+          })}
         >
-          <div className={classes.heroAreaContentInner}>
-            <div className={classes.heroAreaNav}>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleSupport && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Личный кабинет
-              </a>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleSupport && classes.heroAreaLinkVisible
-                }`}
-              >
-                <div className={classes.heroAreaIcon} />
-                Пополнить баланс
-              </a>
-              <a
-                className={`${classes.heroAreaLink} ${
-                  isVisibleSupport && classes.heroAreaLinkVisible
-                }`}
-                href="#"
-              >
-                <div className={classes.heroAreaIcon} />
-                Скачать приложение
-              </a>
-              {/*<a*/}
-              {/*  className={`${classes.heroAreaLink} ${*/}
-              {/*    isVisibleSupport && classes.heroAreaLinkVisible*/}
-              {/*  }`}*/}
-              {/*  href="#"*/}
-              {/*>*/}
-              {/*  <div className={classes.heroAreaIcon} />*/}
-              {/*  Помощь*/}
-              {/*</a>*/}
-              {/*<a*/}
-              {/*  className={`${classes.heroAreaLink} ${*/}
-              {/*    isVisibleSupport && classes.heroAreaLinkVisible*/}
-              {/*  }`}*/}
-              {/*  href="#"*/}
-              {/*>*/}
-              {/*  <div className={classes.heroAreaIcon} />*/}
-              {/*  Акции для клиентов*/}
-              {/*</a>*/}
+          <div className={styles.heroAreaContentInner}>
+            <div className={styles.heroAreaNav}>
+              {supportButtons.map(
+                (b: {
+                  title: string;
+                  href: string;
+                  image: StaticImageData;
+                }): JSX.Element => {
+                  return (
+                    <a
+                      key={b.title}
+                      className={cn(styles.heroAreaLink, {
+                        [styles.heroAreaLinkVisible]: isVisibleSupport,
+                      })}
+                      href={b.href}
+                      onMouseEnter={() =>
+                        handleEnterLink({
+                          value: true,
+                          image: b.image,
+                        })
+                      }
+                      onMouseLeave={() =>
+                        handleEnterLink({
+                          value: false,
+                          image: b.image,
+                        })
+                      }
+                    >
+                      <div className={styles.heroAreaIcon} />
+                      {b.title}
+                    </a>
+                  );
+                }
+              )}
               <button
-                className={`${classes.heroAreaLink} ${
-                  isVisibleSupport && classes.heroAreaLinkVisible
-                }`}
+                className={cn(styles.heroAreaLink, {
+                  [styles.heroAreaLinkVisible]: isVisibleSupport,
+                })}
                 onClick={closeSupportBlock}
-                data-img="/static/public-v2/images/redesign/backgrounds/rightMenu/back_noBG.c93c654c3c00.png"
                 data-text="Свернуть меню"
               >
-                <div className={classes.heroAreaIcon} />
+                <div className={styles.heroAreaIcon} />
                 Назад
               </button>
             </div>
           </div>
         </div>
       </div>
-      <div className={classes.heroSlidesWrap}>
-        <div className={classes.heroAreaText} />
+      <div className={styles.heroSlidesWrap}>
+        {enterLink.text && (
+          <div
+            className={cn(styles.heroAreaText, {
+              [styles.heroAreaTextVisible]:
+                enterLink.isMouseEnter || (isVisibleGuard && isVisibleGuard),
+            })}
+          >
+            {enterLink.text}
+          </div>
+        )}
         <div
           style={{ backgroundImage: `url("http:${banner}")` }}
-          className={`${classes.heroSlideEvent} ${
-            isVisibleGuard || isVisibleSupport
-              ? classes.heroSlideEventHidden
-              : ""
-          }`}
+          className={cn(styles.heroSlideEvent, {
+            [styles.heroSlideEventHidden]: isVisibleGuard || isVisibleSupport,
+          })}
           data-target="#popup-new-app"
           data-toggle="modal"
         />
         <div
-          className={`${classes.heroSlidesOverlay} ${
-            isVisibleSupport || isVisibleGuard
-              ? classes.heroSlidesOverlayVisible
-              : ""
-          }`}
+          className={cn(styles.heroSlidesOverlay, {
+            [styles.heroSlidesOverlayVisible]:
+              isVisibleSupport || isVisibleGuard,
+          })}
         />
       </div>
       <div
-        className={`${classes.heroOverlay} ${
-          isVisibleGuard && classes.heroOverlayVisibleProds
-        } ${
-          isVisibleSupport || isVisibleGuard ? classes.heroOverlayVisible : ""
-        }`}
+        className={cn(styles.heroOverlay, {
+          [styles.heroOverlayVisibleProds]: isVisibleGuard,
+          [styles.heroOverlayVisible]: isVisibleGuard || isVisibleSupport,
+        })}
       />
     </div>
   );

@@ -8,6 +8,7 @@ import GbrSection from "./Home/GbrSection/GbrSection";
 import MainWorkSection from "./Home/MainWorkSection/MainWorkSection";
 import PlansSection from "./Home/PlansSection/PlansSection";
 import ServicesSection from "./Home/ServicesSection/ServicesSection";
+export * from './Home/AboutService/AboutService'
 
 export {
   Header,

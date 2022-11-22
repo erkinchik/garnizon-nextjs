@@ -7,6 +7,9 @@ import Layout from "./layouts/Layout/Layout";
 import AuthLayout from "./layouts/AuthLayout/AuthLayout";
 import ClientOnly from "./ClientOnly";
 import Loader from "./common/Loader/Loader";
+import Service from "./Service/Service";
+export * from './Link/Link'
+export * from "./ScrollableAnchor/ScrollableAnchor"
 export {
   AppRouter,
   Input,
@@ -16,5 +19,6 @@ export {
   Layout,
   ClientOnly,
   AuthLayout,
+  Service,
   Loader,
 };
