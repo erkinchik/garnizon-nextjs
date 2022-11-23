@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { toast } from 'react-toastify';
-import { UserState } from "../../types/interface";
+import { UserState } from "../../shared/types/interface";
 
 const URL = "http://discoverystudio.xyz:6969"
 

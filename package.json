@@ -10,7 +10,7 @@
     "build:stage": "env-cmd -f .env.development next build",
     "build": "env-cmd -f .env.production next build",
     "lint": "next lint",
-    "codegen": "contentful-typescript-codegen --output src/types/contentful.d.ts"
+    "codegen": "contentful-typescript-codegen --output src/shared/types/contentful.d.ts"
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^15.12.1",

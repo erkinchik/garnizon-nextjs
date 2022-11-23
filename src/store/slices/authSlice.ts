@@ -1,9 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 // import { toast } from 'react-toastify';
-import { AuthState, loginData, registerData } from "../../types/interface";
+import { AuthState, loginData, registerData } from "../../shared/types/interface";
 import { notification } from "antd";
-import { token } from "../../../utils/index";
+import { token } from "../../utils/index";
 import { getCookie } from "cookies-next/lib";
 import { user } from "../../services/cookies";
 

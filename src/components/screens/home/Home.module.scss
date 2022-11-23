@@ -1,0 +1,15 @@
+//@import "src/assets/stylesner";
+
+.home {
+  width: 100%;
+}
+.mainText {
+  display: block;
+  .mainTextContent {
+    max-width: 1160px;
+    font-size: 1.8em;
+    margin: 0 auto;
+    padding: 3rem 30px;
+  }
+}
+

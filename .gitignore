@@ -33,4 +33,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-src/types/next-env.d.ts
+src/shared/types/next-env.d.ts
