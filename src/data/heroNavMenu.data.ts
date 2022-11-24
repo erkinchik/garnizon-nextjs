@@ -44,7 +44,7 @@ export const supportButtons = [
   {
     title: "Личный кабинет",
     href: "#",
-    image: customer,
+    image: operator,
     text: "Ваше личное пространство. В любой момент вы можете остаток на счете и историю вызовов",
   },
   {
