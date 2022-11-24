@@ -1,12 +1,12 @@
 import React, { FC } from "react";
 
 import classes from "./Services.module.scss";
-import { IServices, IServicesFields } from "../../../../shared/types/contentful";
+import { IServices, IServicesFields } from "shared/types/contentful";
 interface ServicesSectionProps {
   services: Array<IServices>;
 }
 const ServicesSection: FC<ServicesSectionProps> = ({ services }) => {
-  const [one, two, three, four, five, six] = services;
+  const [one, two, three, four, five, six] = services as any;
   return (
     <div>
       <section className={classes.services}>

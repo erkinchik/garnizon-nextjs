@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-import { Service } from "../../../index";
 import { IService, services } from "../../../../data/serviceCards.data";
 import styles from "./AboutService.module.scss";
-import { useRouter } from "next/router";
 import ServiceCard from "../../../shared/ServiceCard/ServiceCard";
 
  const AboutService = () => {

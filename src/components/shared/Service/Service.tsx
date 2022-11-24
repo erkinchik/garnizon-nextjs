@@ -5,7 +5,6 @@ import styles from "./Service.module.scss";
 import guard from "../../../assets/media/guard.jpg";
 
 import cn from "classnames";
-import { ScrollableAnchor } from "../../index";
 import { IService } from "../../../data/serviceCards.data";
 import { useRouter } from "next/router";
 import { HOME_PAGE } from "../../../routes/path";
