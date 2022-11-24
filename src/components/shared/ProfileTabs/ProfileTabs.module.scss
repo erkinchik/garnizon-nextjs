@@ -1,0 +1,27 @@
+@import "src/assets/styles/vars";
+
+.tabContainer {
+  .custom {
+    //background: black;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    :global .ant-tabs-nav {
+      //border: 1px solid lightgrey;
+      .ant-tabs-nav-wrap {
+        .ant-tabs-nav-list {
+          .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+            color: $primary-color;
+          }
+          .ant-tabs-tab {
+            padding: 12px 30px;
+          }
+          .ant-tabs-ink-bar {
+            background: $primary-color;
+            height: 6px;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+}

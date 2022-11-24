@@ -7,6 +7,8 @@ import { ItemType } from "shared/types/type";
 import Head from "next/head";
 import { AppDispatch } from "store/index";
 import { withLayout } from "components/hocs/withLayout";
+import { ProfileTabs } from "components/shared";
+import { Tabs } from "antd";
 const Profile = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { user } = useAppSelector((state) => state.auth);
@@ -19,19 +21,38 @@ const Profile = () => {
   }, [dispatch, user]);
   const plan = true;
 
+  const onChange = () => {
+    console.log("hello");
+  };
+
   return (
     <>
       <Head>
         <title>Мой Профиль</title>
       </Head>
 
-    <div className={styles.wrapper}>
+      <div className={styles.wrapper}>
         <div className={styles.container}>
           <div className={styles.card}></div>
 
-          <div className={styles.form}></div>
+          <ProfileTabs
+            defaultActiveKey="1"
+            onChange={onChange}
+            items={[
+              {
+                label: `Профиль`,
+                key: "1",
+                children: `Content of Tab Pane 1`,
+              },
+              {
+                label: `История вызовов`,
+                key: "2",
+                children: `Content of Tab Pane 2`,
+              },
+            ]}
+          />
         </div>
-    </div>
+      </div>
       {/*<div className={classes.profile}>*/}
       {/*  <div className={`${classes.profileInner} ${classes.container}`}>*/}
       {/*    <section className={classes.profileHeader}>*/}
