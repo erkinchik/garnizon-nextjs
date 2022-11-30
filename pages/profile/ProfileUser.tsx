@@ -33,7 +33,7 @@ export const ProfileUser = () => {
                     <section className={classes.profileHeader}>
                         <div className={classes.profilePageInfo}>
                             <div className={classes.profileImage}>
-                                <Image src={profile}/>
+                                <Image src={profile} alt={'profile'}/>
                             </div>
                             <div className={classes.profileText}>
                                 <h4 className={classes.profileUserInfo}>
