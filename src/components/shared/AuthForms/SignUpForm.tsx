@@ -106,9 +106,11 @@ export const SignUpForm = () => {
           </Checkbox>
         </Form.Item>
         <Form.Item wrapperCol={{ offset: 0 }}>
+          <Link href={'/'}>
           <Button className={classes.btn} type="primary" htmlType="submit">
             Зарегистрироваться
           </Button>
+          </Link>
         </Form.Item>
       </Form>
 

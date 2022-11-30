@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import classes from "./Header.module.scss";
 
-import ProfileIcon from "../../../assets/icons/profileIcon.svg";
-import TelegramIcon from "../../../assets/icons/telegramIcon.svg";
+import ProfileIcon from "../../../assets/icons/personal.svg";
+import TelegramIcon from "../../../assets/icons/telegram.svg";
 import WhatsAppIcon from "../../../assets/icons/whatsappIcon.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
@@ -58,39 +58,34 @@ export const Header: FC = () => {
           <Link href="/">
             <a className={classes.homeLink} />
           </Link>
+          <h2>Гарнизон</h2>
         </div>
         <div className={classes.linkContainer}>
-          <div className={classes.linkItem}>
+          <div className={classes.linkItem}
+          style={{position:"absolute", right:350, top:37}}>
             <span className={classes.link}>
               <a className={classes.link} href={`tel:${phone}`}>
                 {phone}
               </a>
             </span>
           </div>
-          <li className={classes.linkItem}>
-            <a className={classes.link}>Пополнить баланс</a>
-          </li>
+
         </div>
         <ul className={`${classes.linkContainer} ${classes.icons}`}>
-          <li
-            className={`${classes.linkItem} ${classes.icon} ${classes.telegramLink}`}
-            data-tooltip={"Telegram"}
-          >
+          <div>
             <a
-              className={`${classes.link} ${classes.icon}`}
+                data-tooltip={"Telegram"}
               href={telegram}
               target="_blank"
               rel="noreferrer"
             >
-              <TelegramIcon />
+              <TelegramIcon  />
             </a>
-          </li>
+          </div>
           <li
-            className={`${classes.linkItem} ${classes.icon} ${classes.whatsAppLink}`}
             data-tooltip={"WhatsApp"}
           >
             <a
-              className={`${classes.link} ${classes.icon}`}
               href={whatsApp}
               rel="noreferrer"
               target="_blank"
@@ -100,7 +95,6 @@ export const Header: FC = () => {
           </li>
           {!profilePage.includes(router.pathname) && (
             <li
-              className={`${classes.linkItem} ${classes.icon} ${classes.profile} `}
               data-tooltip={"Личный Кабинет"}
             >
               <Link
@@ -118,7 +112,6 @@ export const Header: FC = () => {
           )}
           {token && (
             <li
-              className={`${classes.linkItem} ${classes.icon} ${classes.profile} `}
               data-tooltip={"Выйти"}
               onClick={logOut}
             >

@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import Link from "next/link";
 import { Button, Checkbox, Form, Input } from "antd";
-import { HOME_PAGE, REGISTRATION_PAGE } from "../../../routes/path";
+import { HOME_PAGE, REGISTRATION_PAGE, FORGOT_PAGE } from "../../../routes/path";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
 import { useRouter } from "next/router";
@@ -77,7 +77,7 @@ export const LoginForm: FC = () => {
           >
             <Checkbox>Запомнить меня</Checkbox>
           </Form.Item>
-          <Link className={styles.forgotPass} href={"/404"}>
+          <Link className={styles.forgotPass} href={FORGOT_PAGE}>
             Забыли Пароль?
           </Link>
         </div>

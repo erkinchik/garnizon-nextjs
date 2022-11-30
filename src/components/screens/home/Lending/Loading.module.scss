@@ -1,0 +1,31 @@
+
+.background {
+  height: 1010px;
+  position: relative;
+  background: url("../../../../assets/icons/backgroundzajita.png")  0 0/100% 100% no-repeat ;
+
+}
+.zajita {
+
+  display: flex;
+  flex-direction: column;
+}
+
+.bth {
+  color: #0075FF;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  background:#0075FF;
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid #0075FF ;
+  border-radius: 12px;
+  padding:10px;
+}
+.bth:hover {
+  background:#0075FF;
+
+  color: white;
+}
+.p{
+
+}

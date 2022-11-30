@@ -15,6 +15,7 @@ export interface IHomeFields {
 }
 
 export interface IHome extends Entry<IHomeFields> {
+  fields: any;
   sys: {
     id: string;
     type: string;

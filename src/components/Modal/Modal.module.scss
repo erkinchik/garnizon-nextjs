@@ -1,0 +1,30 @@
+.modal {
+  height: 1010px;
+  width: 100vw;
+  background: linear-gradient(90deg, rgba(36, 37, 39, 0.95) 0%, rgba(36, 37, 39, 0.848073) 40.97%, rgba(36, 37, 39, 0) 189.08%);
+  backdrop-filter: blur(4px);
+  position: absolute;
+  top: 1px;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+
+}
+
+.modal__content {
+
+margin: 10%;
+}
+
+.modal__content.active {
+  transform: scale(1);
+
+}

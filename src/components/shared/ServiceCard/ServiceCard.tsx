@@ -7,7 +7,7 @@ import cn from "classnames";
 
 const ServiceCard = ({ service }: { service: IService }) => {
   const router = useRouter();
-  const [isCardActive, setIsCardActive] = useState(false);
+  const [isCardActive, setIsCardActive] = useState(true);
   useEffect(() => {
     if (router.asPath.split("#")[1] === service.id) {
       router.push(HOME_PAGE);
@@ -42,7 +42,7 @@ const ServiceCard = ({ service }: { service: IService }) => {
           <div className={styles.cardHover}>
             <h2>{service.title}</h2>
             <p>{service.text}</p>
-            <p className={styles.link}>Подробнее</p>
+            {/*<p className={styles.link}>Подробнее</p>*/}
           </div>
         </a>
         <div className={styles.cardBorder} />

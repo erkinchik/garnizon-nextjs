@@ -7,7 +7,7 @@ import { token } from "../../utils/index";
 import { getCookie } from "cookies-next/lib";
 import { user } from "../../services/cookies";
 
-const URL = "http://discoverystudio.xyz:6969";
+const URL = "http://176.126.164.61:8080";
 
 const initialState = {
   error: "",
@@ -111,8 +111,7 @@ const authSlice = createSlice({
       state.loading = false;
       state.isRegister = true;
       state.user = action.payload;
-
-      notification.error({
+      notification.success({
         message: "Регистрация прошла успешно",
         placement: "topLeft",
       });

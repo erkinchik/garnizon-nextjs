@@ -3,9 +3,11 @@ import React from "react";
 import classes from "./PlansSection.module.scss";
 
 import { Button, Divider, notification, Space } from "antd";
+import type { NotificationPlacement } from "antd/es/notification";
 import { getNoun } from "../../../../utils/helpers/getNoun.helpers";
-import { useAppSelector } from "hooks/useAppSelector";
-import { IPlans, IPlansFields } from "shared/types/contentful";
+import { useAppSelector } from "../../../../hooks/useAppSelector";
+import { token } from "../../../../utils/index";
+import { IPlans, IPlansFields } from "../../../../shared/types/contentful";
 
 const plans = [
   { title: "Стандартный", price: 500, callsQuantity: 1 },
@@ -48,7 +50,7 @@ const PlansSection = ({ plans }: { plans: IPlans[] }) => {
   return (
     <section className={classes.section}>
       <div className={classes.container}>
-        {sortedPlans?.map(({ fields }: any) => {
+        {sortedPlans?.map(({ fields }: any ) => {
           return (
             <div className={classes.column} key={fields.price}>
               <div className={`${classes.pricingCard} ${classes.basic}`}>
