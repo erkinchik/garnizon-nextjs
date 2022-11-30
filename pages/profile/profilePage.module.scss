@@ -80,7 +80,12 @@
         }
       }
     }
-
+.linia {
+  background: #cccccc;
+  height: 1px;
+  position: relative;
+  top: -42px;
+}
     .historySection {
       width: 100%;
       display: flex;

@@ -9,6 +9,10 @@ import FeedFormSection from "./FeedFormSection/FeedFormSection";
 import { HomeProps } from "../../../shared/props/Home.props";
 import { useDispatch } from "react-redux";
 import { setLinks } from "store/slices/linksSlice";
+import MainPage from "components/screens/home/MainPage/MainPage";
+import Lading from "components/screens/home/Lending/Lading";
+import InfoSection from "components/screens/home/InfoSection/InfoSection";
+import ServicesSection from "components/screens/home/ServicesSection/ServicesSection";
 
 export const HomeConstructor = ({
   home,
@@ -24,23 +28,25 @@ export const HomeConstructor = ({
   console.log(heroSection)
   return (
     <main className={styles.home}>
-      <Hero banner={heroSection.fields.banner?.fields.file.url} />
+        <MainPage/>
+        <Lading/>
+      {/*<Hero banner={heroSection.fields.banner?.fields.file.url} />*/}
       {/*<InfoSection text={heroSection.fields.infoText || ""} />*/}
-      {/*<ServicesSection services={services} />*/}
-      <PlansSection plans={plans} />
+      <ServicesSection />
+      {/*<PlansSection plans={plans} />*/}
       <AboutService />
-      <MainWorkSection
-        text={mainWorkSection.fields.infoText!}
-        banner={mainWorkSection.fields.banner?.fields.file.url!}
-      />
-      <GbrSection
-        title={gbrSection.fields.title!}
-        text={gbrSection.fields.infoText!}
-        banner={gbrSection.fields.banner?.fields.file.url!}
-        text2={gbrSection2.fields.infoText!}
-        title2={gbrSection2.fields.title!}
-        banner2={gbrSection2.fields.banner?.fields.file.url!}
-      />
+      {/*<MainWorkSection*/}
+      {/*  text={mainWorkSection.fields.infoText!}*/}
+      {/*  banner={mainWorkSection.fields.banner?.fields.file.url!}*/}
+      {/*/>*/}
+      {/*<GbrSection*/}
+      {/*  title={gbrSection.fields.title!}*/}
+      {/*  text={gbrSection.fields.infoText!}*/}
+      {/*  banner={gbrSection.fields.banner?.fields.file.url!}*/}
+      {/*  text2={gbrSection2.fields.infoText!}*/}
+      {/*  title2={gbrSection2.fields.title!}*/}
+      {/*  banner2={gbrSection2.fields.banner?.fields.file.url!}*/}
+      {/*/>*/}
       <FeedFormSection />
     </main>
   );

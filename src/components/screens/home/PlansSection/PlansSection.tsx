@@ -50,7 +50,7 @@ const PlansSection = ({ plans }: { plans: IPlans[] }) => {
   return (
     <section className={classes.section}>
       <div className={classes.container}>
-        {sortedPlans?.map(({ fields }: { fields: IPlansFields }) => {
+        {sortedPlans?.map(({ fields }: any ) => {
           return (
             <div className={classes.column} key={fields.price}>
               <div className={`${classes.pricingCard} ${classes.basic}`}>
