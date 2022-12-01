@@ -1,18 +1,27 @@
-
+.h1 {
+  font-weight:bold;
+  max-width:435px;
+  font-size:25px;
+}
 .text {
   max-width:450px;
   margin:50px 0;
   color:black;
   font-size:16px;
 }
-@media screen and (max-width: 900px){
-.h1 {
- width: 300px;
-  text-align: center;
-}
+
+@media screen and (max-width: 1120px){
+  .div {
+    text-align: center;
+  }
+  .text {
+
+  }
 }
 
-@media screen and (max-width: 400px){
+
+
+@media screen and (max-width: 500px){
   .div {
     padding:0 15%;
   }

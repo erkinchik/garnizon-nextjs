@@ -58,7 +58,7 @@ export const Header: FC = () => {
           <Link href="/">
             <a className={classes.homeLink} />
           </Link>
-          <h2>Гарнизон</h2>
+          <h2 className={classes.h2}>Гарнизон</h2>
         </div>
         <div className={classes.linkContainer}>
           <div className={classes.linkItem}
