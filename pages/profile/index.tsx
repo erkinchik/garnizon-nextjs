@@ -7,7 +7,7 @@ import Head from "next/head";
 import { AppDispatch } from "store/index";
 import { withLayout } from "components/hocs/withLayout";
 import { ProfileTabs } from "components/shared";
-import {ProfileUser} from "./ProfileUser";
+import ProfileUser from "./ProfileUser";
 import History from "./History";
 
 const Profile = () => {
