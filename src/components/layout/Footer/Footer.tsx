@@ -63,7 +63,7 @@ export const Footer = () => {
                   data-ga-category="btn_android"
                   data-ga-type="footer"
                   href="https://play.google.com/store/apps/details?id=com.tariel.alarmclientapp"
-                  rel="nofollow"
+                  rel="noopener noreferrer"
                   target="_blank"
                 />
               </div>

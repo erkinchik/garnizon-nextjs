@@ -7,7 +7,8 @@ interface InputProps {
   name?: string;
   type: string;
   className?: string;
-  onChange?: () => void;
+  onChange?: any;
+  value: string;
 }
 
 export const Input: FC<InputProps> = ({
@@ -15,7 +16,7 @@ export const Input: FC<InputProps> = ({
   name,
   className,
   type,
-  onChange,
+  onChange, value
 }) => {
   return (
     <input
@@ -24,6 +25,7 @@ export const Input: FC<InputProps> = ({
       placeholder={placeholder}
       name={name}
       type={type}
+      value={value}
     />
   );
 };

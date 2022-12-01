@@ -8,18 +8,18 @@ import Image from "next/image";
 
 const MainPage = () => {
     return (
-        <div style={{margin:'100px 0'}}>
+        <div style={{margin:'100px 0 0 '}}>
         <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:100, flexWrap:"wrap"}}>
         <div style={{padding:'5%'}}>
             <Image src={Phone} height={600}/>
         </div>
             <div className={classes.div}>
-                <h1 className={classes.h1} style={{fontWeight:"bold", maxWidth:300, fontSize:30}}>В приложении ещё удобней!</h1>
+                <h1 className={classes.h1}>В приложении ещё удобней!</h1>
                 <div className={classes.div} style={{display:"flex", gap:30,}}>
                 <a  href="#">
                     <Image src={Apple} height={65}/>
                 </a>
-                <a target='_blank' href="https://play.google.com/store/apps/details?id=com.tariel.alarmclientapp">
+                <a target='_blank' rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.tariel.alarmclientapp">
                     <Image src={Google} height={65}/>
                 </a>
                 </div>
@@ -29,9 +29,9 @@ const MainPage = () => {
                     организации охраны.
                 </p>
             </div>
-            <div style={{position:"relative", top:290}}>
-            <Support/>
-            </div>
+            {/*<div style={{position:"relative", top:290}}>*/}
+            {/*<Support/>*/}
+            {/*</div>*/}
         </div>
         </div>
     );

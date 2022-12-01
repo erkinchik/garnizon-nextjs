@@ -8,7 +8,7 @@ const Lading = () => {
     return (
         <div className={stales.background}>
         <div className={stales.zajita}>
-            <div style={{margin:"13% 7% 10% "}}>
+            <div style={{margin:"10% 7% 10% "}}>
             <h1 style={{color:" #FFFFFF",  fontSize:45}}>GARNIZON</h1>
             <p style={{color:" #FFFFFF", fontSize:18, maxWidth:700}}>Имеет опыт работы по организации охраны бизнес и торговых центров,
                 офисов, гостиниц, кафе, складов, закрытых жилых комплексов с 20хх года
