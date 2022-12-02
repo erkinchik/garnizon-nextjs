@@ -16,7 +16,7 @@ import {IService, services} from "../../../../data/serviceCards.data";
   return (
       <>
     <section className={styles.wrapper}>
-        <h3 style={{textAlign:"center", margin:'100px 0 50px', color:'#0075FF', fontWeight:800}}>Наши услуги</h3>
+        <h1 style={{textAlign:"center", margin:'100px 0 50px', color:'#0075FF', fontWeight:800}}>Наши услуги</h1>
       <div className={styles.services}>
         {services.map((s: IService): JSX.Element => {
           return <ServiceCard key={s.id} service={s} />;
