@@ -26,7 +26,7 @@ const FeedFormSection = () => {
 
     return (
         <div className={classes.background}>
-            <div style={{display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center",}}>
+            <div className={classes.wrapper} >
                 <div className={classes.div}>
                     <form
                         action="/universal_form/lead_form/"
