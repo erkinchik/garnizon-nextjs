@@ -123,8 +123,19 @@
 //    padding: 20px;
 //  }
 //}
+.carousels {
+  display: none;
+}
+.adaptiv {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
 
 .bth {
+  font-weight: 800;
+  font-size: 20px;
   color: #0075FF;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -139,6 +150,7 @@
 
   color: white;
 }
+
 .card {
   position: relative;
   z-index: 1;
@@ -148,4 +160,29 @@
   position: relative;
   z-index: 1;
   box-shadow: 0 1px 2px -2px rgba(0 18 255 / 25%), 0 3px 6px 0 rgb(0 18 255 / 25%), 0 5px 12px 4px rgb(0 18 255 / 25%);
+}
+
+@media screen and (max-width: 525px) {
+  .bth_carousel {
+    position: relative;
+    top: 25px;
+  }
+  .carousels {
+    display: block;
+  }
+  .adaptiv{
+    display: none;
+  }
+  .card {
+    position: relative;
+    z-index: 1;
+   border: 2px solid black;
+    border-radius: 16px;
+    box-shadow:none;
+  }
+  .card:hover {
+    position: relative;
+    z-index: 1;
+    box-shadow:none;
+  }
 }
