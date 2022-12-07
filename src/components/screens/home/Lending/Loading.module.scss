@@ -19,12 +19,21 @@
   border: 2px solid #0075FF ;
   border-radius: 12px;
   padding:10px;
+
+}
+.bth__item {
+  display: flex;
+  gap: 40px;
+  margin: 3% 0 0;
+}
+@media screen and (max-width: 500px) {
+  .bth__item {
+    margin: 10% 0 0;
+  }
 }
 .bth:hover {
   background:#0075FF;
 
   color: white;
 }
-.p{
 
-}

@@ -1,179 +1,32 @@
 .footer {
-  background-color: #22262d;
-  position: relative;
+  background-color: #282828;
+}
 
-  .footerWrapper {
-    margin: 0 auto;
-    max-width: 1280px;
-    padding: 45px 30px 40px 68px;
-    width: 100%;
-
-    .bottomBlockWrapper {
-      margin-right: 40px;
-      margin-top: 40px;
-      .textContainer {
-        .text {
-          color: #959da8;
-          font-size: 11px;
-          line-height: 15px;
-          margin-bottom: 20px;
-        }
-      }
-    }
-    .topBlockWrapper {
-      .socialLinks {
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        margin-bottom: 40px;
-
-        .social {
-          background-repeat: no-repeat;
-          background-size: contain;
-          border-radius: 50%;
-          display: block;
-          height: 36px;
-          margin-right: 16px;
-          width: 36px;
-        }
-        .whatsApp {
-          background-image: url(../../../assets/icons/social/whatsapp.8a549938e510.svg);
-        }
-        .telegram {
-          background-image: url(../../../assets/icons/social/telegram.ad6bc4b095e2.svg);
-        }
-        .instagram {
-          background-image: url(../../../assets/icons/social/instagram.08c3585e3d7d.svg);
-        }
-        @media screen and (max-width: 1200px) {
-          .socialLinks {
-            -webkit-box-pack: start;
-            -webkit-justify-content: flex-start;
-            justify-content: flex-start;
-          }
-        }
-      }
-      .footerButton {
-        padding-left: 23px;
-        padding-right: 23px;
-      }
-      .btn:not(:disabled):not(.disabled) {
-        cursor: pointer;
-      }
-
-      .linkContainer {
-        -webkit-box-align: start;
-        -webkit-align-items: flex-start;
-        align-items: flex-start;
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-
-        .contactsBlock {
-          .appLinks {
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            -webkit-flex-wrap: wrap;
-            flex-wrap: wrap;
-            .apple {
-              background-image: url(../../../assets/icons/redesign/appstore_badge.faa02cbbf6ac.png);
-              background-repeat: no-repeat;
-              background-size: contain;
-              border-radius: 5.625px;
-              display: inline-block;
-              height: 36px;
-              width: 120px;
-              margin: 0 8px 0 0;
-            }
-            .google {
-              background-image: url(../../../assets/icons/redesign/googleplay_badge.1d7d95af5395.png);
-              background-repeat: no-repeat;
-              background-size: contain;
-              border-radius: 5.625px;
-              display: inline-block;
-              height: 36px;
-              width: 120px;
-              margin: 0 8px 0 0;
-            }
-          }
-          .phoneEmail {
-            -webkit-box-align: center;
-            -webkit-align-items: center;
-            align-items: center;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: flex;
-            margin-bottom: 32px;
-            white-space: nowrap;
-
-            .callPhone1 {
-              border: none;
-              color: white;
-              font-size: 21px;
-              font-weight: bold;
-              letter-spacing: -0.4px;
-              line-height: 32px;
-              margin-right: 24px;
-              text-decoration: none;
-            }
-          }
-          @media screen and (max-width: 1200px) {
-            .phoneEmail {
-              -webkit-box-align: center;
-              -webkit-align-items: center;
-              align-items: center;
-              display: -webkit-box;
-              display: -webkit-flex;
-              display: flex;
-              -webkit-box-pack: start;
-              -webkit-justify-content: flex-start;
-              justify-content: flex-start;
-            }
-          }
-        }
-        @media screen and (max-width: 1200px) {
-          .contactsBlock {
-            -webkit-box-flex: 0;
-            -webkit-flex: 0 0 100%;
-            flex: 0 0 100%;
-            margin-left: 0;
-            margin-top: 60px;
-            position: relative;
-          }
-        }
-      }
-      @media screen and (max-width: 1200px) {
-        .linkContainer {
-          -webkit-flex-wrap: wrap;
-          flex-wrap: wrap;
-        }
-      }
-    }
+.sss {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  position: absolute;
+}
+.wrapper {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (max-width: 712px) {
+  .sss {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
   }
-
-  li {
-    list-style: none;
-  }
-
-  .link {
-    border: none;
-  }
-
-  @media screen and (max-width: 768px) {
-    .footerWrapper {
-      padding: 45px 36px 55px;
-    }
-  }
-  @media screen and (max-width: 700px) {
-    .footerWrapper {
-      padding: 30px 18px;
-    }
+  .wrapper {
+    margin: 15px 0 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
   }
 }
