@@ -19,7 +19,7 @@ const Lading = () => {
                 Нам доверяют самое ценное, потому что мы ПРОФЕССИОНАЛЫ!
                 Позаботьтесь о БЕЗОПАСНОСТИ своего жилья, бизнеса, детей уже сегодня! Широкий спектр оказываемых услуг.
             </p>
-                <div style={{display:"flex", gap:40, margin:"3% 0"}}>
+                <div className={stales.bth__item} >
                 <button className={stales.bth} onClick={() => setModalActive(true)}>Получить защиту</button>
                     {/*<button className={stales.bth} onClick={() => setModalActivee(true)} >Поддержка клиентов</button>*/}
 

@@ -18,9 +18,10 @@ const gridStyle: React.CSSProperties = {
 };
 
 const carouselStyle: React.CSSProperties = {
-    width: '100%',
+    width: '90%',
     height: '100%',
     textAlign: 'center',
+    margin:"0 19px",
 };
 const ServicesSection: React.FC = () => {
     const { isAuth } = useAppSelector((s: any) => s.auth);
@@ -48,7 +49,7 @@ const ServicesSection: React.FC = () => {
             <h1 style={{margin:"50px 0", textAlign:"center",   color:'#0075FF', fontWeight:800}}>Тарифы</h1>
                 <div className={styles.carousels}>
 
-                    <Carousel autoplay dotPosition={dotPosition} >
+                    <Carousel  dotPosition={dotPosition} autoplay >
                         <div>
                             <Card.Grid className={styles.card} style={carouselStyle}>
                                 <div>
