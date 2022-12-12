@@ -7,7 +7,7 @@ import { token } from "../../utils/index";
 import { getCookie } from "cookies-next/lib";
 import { user } from "../../services/cookies";
 
-const URL = "http://176.126.164.61:8080";
+const URL = "https://176.126.164.61:8080/api";
 
 const initialState = {
   error: "",

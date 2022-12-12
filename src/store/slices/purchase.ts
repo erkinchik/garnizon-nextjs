@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const token = localStorage.getItem("token") || null;
-const URL = process.env.REACT_APP_BASE_URL;
+const URL = "https://176.126.164.61:8080/api"
 
 type Loading = "idle" | "pending" | "succeeded" | "failed";
 interface AuthState {
