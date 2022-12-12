@@ -3,7 +3,7 @@ import axios from "axios";
 // import { toast } from 'react-toastify';
 import { UserState } from "../../shared/types/interface";
 
-const URL = "http://discoverystudio.xyz:6969"
+const URL = "https://176.126.164.61:8080/api"
 
 const initialState = {
     error: false,
