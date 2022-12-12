@@ -7,7 +7,7 @@ import { token } from "../../utils/index";
 import { getCookie } from "cookies-next/lib";
 import { user } from "../../services/cookies";
 
-const URL = "https://176.126.164.61:8080/api";
+const URL = "https://garnizon.kg/api";
 
 const initialState = {
   error: "",

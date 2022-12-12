@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const token = localStorage.getItem("token") || null;
-const URL = "https://176.126.164.61:8080/api"
+const URL = "https://garnizon.kg/api"
 
 type Loading = "idle" | "pending" | "succeeded" | "failed";
 interface AuthState {
