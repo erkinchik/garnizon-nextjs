@@ -7,6 +7,7 @@ import ProfileIcon from "../../../assets/icons/personal.svg";
 import TelegramIcon from "../../../assets/icons/telegram.svg";
 import WhatsAppIcon from "../../../assets/icons/whatsappIcon.svg";
 import LogoutIcon from "../../../assets/icons/logout.svg";
+import Phonetel from "../../../assets/icons/phone-call.png";
 import { useAppDispatch } from "../../../hooks/useAppDispatch";
 import { useAppSelector } from "../../../hooks/useAppSelector";
 import {
@@ -21,6 +22,7 @@ import { logout } from "../../../store/slices/authSlice";
 import { useCookies } from "react-cookie";
 
 import { allCookies } from "../../../services/cookies";
+import Image from "next/image";
 
 const linksStructure = [
   {
@@ -58,7 +60,7 @@ export const Header: FC = () => {
           <Link href="/">
             <a className={classes.homeLink} />
           </Link>
-          <h2 className={classes.h2}>Гарнизон</h2>
+          {/*<h2 className={classes.h2}>Гарнизон</h2>*/}
         </div>
         <div className={classes.linkContainer}>
           <div className={classes.linkItem}
@@ -72,6 +74,13 @@ export const Header: FC = () => {
 
         </div>
         <ul className={`${classes.linkContainer} ${classes.icons}`}>
+          <div className={classes.phone__tel}>
+            <a
+                href={`tel:${phone}`}
+            >
+              <Image src={Phonetel}  height={38} width={38}/>
+            </a>
+          </div>
           <div>
             <a
                 data-tooltip={"Telegram"}
@@ -93,6 +102,7 @@ export const Header: FC = () => {
               <WhatsAppIcon />
             </a>
           </li>
+
           {!profilePage.includes(router.pathname) && (
             <li
               data-tooltip={"Личный Кабинет"}

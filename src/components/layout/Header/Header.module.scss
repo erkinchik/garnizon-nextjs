@@ -116,6 +116,7 @@
         }
       }
 
+
       .profile[data-tooltip],
       .whatsAppLink[data-tooltip],
       .telegramLink[data-tooltip] {
@@ -165,10 +166,16 @@
         display: block;
       }
     }
-
+    .phone__tel {
+      display: none;
+    }
     @media screen and (max-width: 830px) {
       .linkContainer {
         display: none;
+      }
+      .phone__tel {
+        display: block;
+        margin: 0 15px;
       }
     }
     .icons {
