@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const MainPage = () => {
     return (
-        <div style={{margin:'100px 0 0 '}}>
+        <div >
         <div style={{display:"flex", justifyContent:"center", alignItems:"center", gap:100, flexWrap:"wrap"}}>
         <div style={{padding:'5%'}}>
             <Image src={Phone} height={600}/>
@@ -23,6 +23,11 @@ const MainPage = () => {
                     <Image src={Google} height={65}/>
                 </a>
                 </div>
+                <p className={classes.text}>
+                    Главное преимущество нашей «G-SOS» услуги – через несколько минут после нажатия ближайший экипаж реагирования будет на месте.
+<br/>
+                    Приложение для Вашего смартфона – это отличный инструмент для того, чтобы Вы и Ваши близкие чувствовали себя в безопасности в любой точке города.
+                </p>
                 <p className={classes.text}>
                    <span style={{fontWeight:"bold"}}>GARNIZON</span> – имеет опыт работы по организации охраны бизнес и торговых центров, офисов,
                     гостиниц, кафе, складов, закрытых жилых комплексов с 20хх года и является ведущим в области

@@ -72,7 +72,8 @@
   margin: 150px 0 0;
   position: relative;
   height: 400px;
-  background: url("../../../../assets/icons/oxrana.jpg")0 0/100% 100% no-repeat ;
+  width: 100%;
+  background: url("../../../../assets/icons/oxrana.jpg") top/cover no-repeat;
 }
 .wrapper {
   display: flex;
@@ -95,7 +96,7 @@
   }
   .feedForm {
     display: block;
-    padding: 10% 5%;
+    padding: 10% 10%;
   }
   .wrapper {
     text-align: center;
